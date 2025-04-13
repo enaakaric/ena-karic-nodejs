@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Škola Web Dizajna</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <script src="script/scripts.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <style>
+           body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    header {
+        background-color: #141414;
+    }
+
+    header a {
+        text-decoration: none;
+        color: white;
+        margin-left: 15px;
+        transition: color 0.3s ease-in-out; 
+    }
+
+    header a:hover {
+        color: #ff758c; 
+    }
+
+    section {
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 50px 0;
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1); 
+    }
+
+    footer {
+        background-color: #ee2a50;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        transition: background-color 0.5s ease-in-out; 
+    }
+
+    footer:hover {
+        background-color: #d91c3c; 
+    }
+
+    </style>
+</head>
+<body>
+    <header style="padding: 10px 0;">
+        <table width="100%">
+            <tr>
+                <td align="right" style="padding-right: 40px;">
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook" style="font-size: 1.5em; margin-left: 10px; color: #ea2041;"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram" style="font-size: 1.5em; margin-left: 10px; color: #ea2041;"></i>
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube" style="font-size: 1.5em; margin-left: 10px; color: #ea2041;"></i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <header>
+        <table width="100%">
+            <tr>
+                <td width="30%" align="left">
+                    <a href="index.html" title="Početna stranica">
+                        <img width="210px" height="100px" src="slike/logo.jpg" alt="Logo">
+                    </a>
+                </td>
+                <td width="65%" align="right" style="padding-right: 20px;">
+                    <a href="index.html">Početna</a>
+                    <a href="onama.html">O nama</a>
+                    <a href="kursevi.html">Kursevi</a>
+                    <a href="utisci.html">Utisci</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </td>
+            </tr>
+        </table>
+        <div id="clock" style="text-align: center;margin-top: 7px;"></div>
+
+    </header>
+  
+
+        <div class="button-container">
+            <button id="openModal"  style="margin-top: 17px;">Prijavi se na kurs</button>
+        </div>
+
+    
+
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Prijava na kurs</h2>
+        <p>Popunite obrazac ispod kako biste se prijavili na kurs.</p>
+        <form action="mailto:skolawebdizajna@gmail.com" method="POST" enctype="text/plain">
+            <label for="name">Ime i Prezime:</label>
+            <input type="text" id="name" name="name" placeholder="Unesite vaše ime i prezime" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Unesite vaš email" required><br><br>
+
+            <label for="course">Odabrani kurs:</label>
+            <select id="course" name="course" required>
+                <option value="HTML i CSS">HTML i CSS</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="React">React</option>
+                <option value="Node.js">Node.js</option>
+            </select><br><br>
+
+            <input type="submit" value="Pošaljite prijavu">
+        </form>
+    </div>
+</div>
+
+
+    <section>
+        <h1 style="font-size: 50px;">Mi smo</h1>
+        <h1 id="skola">Škola Web Dizajna</h1>
+        <hr style="height: 3px; background-color: white; width: 50%; margin: auto;">
+        <p>Mi smo certificirana škola Web programiranja locirana u srcu Sarajeva. Ukoliko imate sklonosti ka programiranju i zanimaju vas Web tehnologije, mi smo pravo mjesto za vaš razvoj.</p>
+    </section>
+    <section>
+        <button class="backToTop" style="background-color: #ee2a50;">Početak stranice</button>
+
+        <table style="width: 100%; background-color: #141414; color: white; padding: 20px;">
+            <tr>
+                <td width="25%"></td>
+                <td width="50%" align="center">
+                    <p>Naša škola web programiranja, smještena u samom centru Sarajeva, nudi certificirane kurseve za sve nivoe znanja. Ako vas zanimaju web tehnologije, naši iskusni instruktori pomoći će vam da naučite kako da kreirate moderne web stranice i aplikacije. Od osnova HTML-a i CSS-a, do naprednih tehnika JavaScript-a, naši kursevi su dizajnirani da unaprijede vaše vještine i pripreme vas za uspješnu karijeru u web razvoju.</p>
+                    <img class="jezici" src="slike/skola.jpg" alt="Programiranje" style="width: 100%; max-width: 400px;">
+                </td>
+                <td width="25%"></td>
+            </tr>
+        </table>
+    </section>
+    <div id="motivational-message" style="text-align: center; font-size: 24px; color: #333; margin-top: 50px;">
+        <!-- Citat će biti prikazan ovde -->
+    </div>
+    <footer style="background-color: #ee2a50; color: white; padding: 20px 0;">
+        <table width="100%" style="text-align: center;"> 
+            <tr>
+                <td width="50%" style="vertical-align: top; padding: 20px;">
+                    <h1 style="margin: 0;">Škola Web Dizajna</h1>
+                    <h3 style="margin: 10px 0;">Vaša budućnost počinje u srcu Sarajeva!</h3>
+                </td>
+                <td width="50%" style="vertical-align: top; padding: 20px;">
+                    <h2 style="margin: 0;">Newsletter</h2>
+                    <h3 style="margin: 10px 0;">Želite biti u toku sa svim novostima?</h3>
+                    <h4 style="margin: 10px 0;">Prijavite se na naš newsletter.</h4>
+                    <form method="POST" action="mailto:skolawebdizajna@gmail.com" enctype="text/plain">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="korisnik" size="15" style="margin: 5px;">
+                        <br>
+                        <input type="submit" value="Pošalji" style="margin-top: 10px;">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </footer>
+    <footer style="text-align: center; background-color: #141414; color: white; padding: 10px 0;">
+        <p>Stranicu kreirala Ena Karić <i class="fa fa-heart"></i></p>
+    </footer>
+    
+</body>
+</html>
