@@ -1,0 +1,517 @@
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input[type="tel"],
+#contact-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+}
+#contact-form input[type="submit"] {
+    background-color: #ea2041;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+#kurseviid{
+    list-style-type: none;
+}
+.ime{
+    color: #ea2041;
+}
+header a {
+    text-decoration: none;
+    color: white;
+    margin-left: 15px;
+}
+.adresa{
+    color: #ea2041;
+}
+.underline{
+    text-decoration: underline;
+    text-decoration-line: solid;
+    text-decoration-color: #ea2041;
+    text-decoration-thickness: 3px;
+}
+
+.tabelica {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .tabelica:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  }
+  img {
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  img:hover {
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+  }
+.jezici, .predavaci{
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 3px 3px 10px gray;
+}
+#skola{
+    font-size: 70px;
+}
+/* Definisanje CSS varijabli */
+:root {
+    --primary-color: #ea2041;
+    --secondary-color: #141414;
+    --light-color: #ffffff;
+    --dark-bg: rgba(0, 0, 0, 0.8);
+    --transition-speed: 0.3s;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #141414, #ee2a50);
+    color: var(--light-color);
+}
+
+#main-header {
+    background-color: var(--secondary-color);
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    animation: slideDown 1s ease-in-out;
+}
+
+/* NAVIGACIJA */
+.navigacija {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--light-color);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+.nav-link:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* HERO SEKCIONI */
+#glavni-sadrzaj {
+    
+    text-align: center;
+    padding: 80px 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Efekti na tekst */
+#skola {
+    font-size: 50px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s infinite alternate;
+}
+
+/* ČLANAK */
+.clanak {
+    background: var(--dark-bg);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.clanak:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Slike */
+.jezici {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+    filter: grayscale(40%);
+    transition: filter var(--transition-speed), transform var(--transition-speed);
+}
+
+.jezici:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* DARK FOOTER */
+.footer-dark {
+    background-color: var(--secondary-color);
+}
+
+/* IKONICE */
+.socijalne-ikonice i {
+    font-size: 1.5em;
+    margin-left: 10px;
+    color: var(--primary-color);
+    transition: transform var(--transition-speed), color var(--transition-speed);
+}
+
+.socijalne-ikonice i:hover {
+    transform: scale(1.2);
+    color: var(--light-color);
+}
+
+/* FORMA */
+#email {
+    padding: 8px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+#email:focus {
+    border-color: var(--light-color);
+    outline: none;
+    box-shadow: 0px 0px 10px var(--light-color);
+}
+
+/* DUGME */
+input[type="submit"] {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+input[type="submit"]:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* CSS3 ANIMACIJE */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+}
+
+header {
+    background: linear-gradient(135deg, #141414, #ea2041);
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigacija */
+header a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+header a:hover {
+    color: #ea2041;
+    transform: scale(1.1);
+}
+
+/* Ikone */
+.fab {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.fab:hover {
+    color: white !important;
+    transform: rotate(10deg) scale(1.1);
+}
+
+
+section {
+    padding: 40px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+
+h1, h2 {
+    font-size: 32px;
+    background: linear-gradient(90deg, #ee2a50, #ff9a9e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s infinite alternate;
+}
+
+/* Tabela stilizacija */
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+th {
+    background: var(--primary-color);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: pink;
+}
+
+tr:hover {
+    background-color: #444;
+    transform: scale(1.02);
+}
+
+/* Lista kurseva */
+ul#kurseviid {
+    text-align: left;
+    display: inline-block;
+}
+
+ul#kurseviid li {
+    font-size: 18px;
+    padding: 8px 0;
+    position: relative;
+    animation: slideIn 1s ease-in-out;
+}
+
+ul#kurseviid li::before {
+    content: "✔";
+    color: #ee2a50;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+footer {
+    background: linear-gradient(135deg, #ea2041, #141414);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.6);
+}
+.backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Skriva dugme inicijalno */
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Pozadina modala */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Tamna pozadina sa prozirnošću */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;  /* Osigurava da modal bude na vrhu svih drugih elemenata */
+}
+
+/* Sadržaj modala */
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001; /* Osigurava da sadržaj bude ispred pozadine modala */
+}
+
+/* Dugme za zatvaranje */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Stil za formu */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+input, select {
+    padding: 12px;
+    font-size: 16px;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Placeholder stil */
+input::placeholder {
+    color: #aaa;
+}
+
+/* Fokus na inputima */
+input:focus, select:focus {
+    border-color: #ee2a50;
+    outline: none;
+}
+
+/* Stil za submit dugme */
+input[type="submit"] {
+    background-color: #ee2a50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #d91c3c;
+}
+/* Kontejner za dugme - pozicioniranje iznad naslova */
+.button-container {
+    text-align: center; /* Centriranje dugmeta */
+    margin-bottom: 20px; /* Razmak između dugmeta i naslova */
+}
+
+/* Stilizacija dugmeta "Prijavi se na kurs" */
+#openModal {
+    background-color: #ee2a50; /* Boja pozadine, usklađeno sa footerom */
+    color: white; /* Tekst u bijeloj boji */
+    font-size: 18px; /* Velicina fonta */
+    padding: 12px 24px; /* Padding oko teksta */
+    border: none; /* Bez ivica */
+    border-radius: 5px; /* Blago zaobljeni kutovi */
+    cursor: pointer; /* Promjena kursora kada je iznad dugmeta */
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Efekti pri hoveru */
+}
+
+/* Efekti pri hoveru */
+#openModal:hover {
+    background-color: #d91c3c; /* Tamnija nijansa kada je dugme u hover stanju */
+    transform: scale(1.05); /* Blagi zoom efekt pri hoveru */
+}
+
+/* Uklanjanje outline-a pri fokusu */
+#openModal:focus {
+    outline: none;
+}
+
+#motivational-message {
+    font-size: 18px; /* Smanjena veličina teksta */
+    color: var(--light-color); /* Bela boja teksta */
+    font-weight: normal;
+    text-align: center;
+    margin: 50px auto; /* Centrirano na stranici */
+    padding: 20px;
+    max-width: 80%; /* Da se tekst ne prostire previše */
+    background-color: rgba(0, 0, 0, 0.7); /* Poluprozirna tamna pozadina */
+    border-radius: 10px; /* Zaobljeni ivici */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); 
+    font-style: italic; /* Italic stil za citate */
+}
+
+/* Efekat kada se citat prikaže */
+#motivational-message.visible {
+    opacity: 1;
+}
+
+#motivational-message span {
+    color: var(--primary-color); /* Suptilna crvena boja za naglašeni citat */
+    font-size: 20px; /* Povećanje veličine samo za citat */
+    font-weight: bold;
+}
+
+/* Efekat kada se citat pojavljuje */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#map {
+    height: 400px; 
+    width: 100%; 
+}

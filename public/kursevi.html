@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursevi - Škola Web Dizajna</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        header {
+            background-color: #141414;
+            padding: 10px 0;
+        }
+
+        section {
+            margin: 20px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: scale(1.01);
+        }
+
+        table {
+            border-collapse: collapse;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        table:hover {
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        th {
+            background-color: #ee2a50;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        tr:hover td {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            background-color: #ee2a50;
+            padding: 20px;
+            color: white;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        footer:hover {
+            background-color: #d91c3c;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        .backToTop {
+            background-color: #ee2a50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            display: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .backToTop:hover {
+            background-color: #d91c3c;
+        }
+    </style>
+   <script>
+    document.addEventListener("DOMContentLoaded", function () { // Čeka da se stranica potpuno učita
+        let naslov = document.querySelector("h1.underline"); // Selektuje <h1> sa klasom "underline"
+        let text = "Kursevi"; // Tekst koji će biti prikazan u <h1>
+        naslov.textContent = ""; // Briše sadržaj <h1>
+        let i = 0;
+
+        function typeEffect() { // Funkcija za efekat tipkanja
+            if (i < text.length) { // Ako tekst nije potpuno prikazan
+                naslov.textContent += text.charAt(i); // Dodaje sljedeći karakter u <h1>
+                i++; // Povećava brojač karaktera
+                setTimeout(typeEffect, 150); // Zakaže ponovni poziv funkcije nakon 150ms
+            }
+        }
+        typeEffect(); // Pokreće efekat tipkanja
+
+        let logo = document.querySelector("header img"); // Selektuje logo u headeru
+        logo.style.transition = "transform 0.3s ease-in-out"; // Dodaje tranziciju za transformaciju
+
+        logo.addEventListener("mouseenter", function () { // Kada korisnik pređe mišem preko loga
+            this.style.transform = "scale(1.1)"; // Povećava logo za 10%
+        });
+
+        logo.addEventListener("mouseleave", function () { // Kada korisnik skine miša sa loga
+            this.style.transform = "scale(1)"; // Vraća logo na originalnu veličinu
+        });
+
+        let meniStavke = document.querySelectorAll("header a"); // Selektuje sve linkove u headeru
+
+        meniStavke.forEach(stavka => { // Za svaki link u headeru
+            stavka.style.transition = "color 0.3s ease-in-out"; // Dodaje tranziciju za promjenu boje
+
+            stavka.addEventListener("mouseenter", function () { // Kada korisnik pređe mišem preko linka
+                this.style.color = "#fff700"; // Menja boju teksta na žuto
+            });
+
+            stavka.addEventListener("mouseleave", function () { // Kada korisnik skine miša sa linka
+                this.style.color = ""; // Vraća originalnu boju
+            });
+        });
+
+        let header = document.querySelector("header"); // Selektuje header
+
+        window.addEventListener("scroll", function () { // Prati skrolovanje stranice
+            if (window.scrollY > 50) { // Ako je stranica skrolovana više od 50px
+                header.style.backgroundColor = "#0f0f0f"; // Menja boju pozadine headera
+                header.style.transition = "background-color 0.5s ease-in-out"; // Dodaje tranziciju
+            } else {
+                header.style.backgroundColor = "#141414"; // Vraća originalnu boju
+            }
+        });
+
+        let sekcije = document.querySelectorAll("section"); // Selektuje sve sekcije na stranici
+
+        function prikaziSekcije() { // Funkcija za prikazivanje sekcija pri skrolovanju
+            sekcije.forEach(sekcija => {
+                let pozicija = sekcija.getBoundingClientRect().top; // Pozicija sekcije na ekranu
+                let visinaEkrana = window.innerHeight - 100; // Visina vidljivog dijela ekrana
+                if (pozicija < visinaEkrana) { // Ako je sekcija unutar vidljivog dijela ekrana
+                    sekcija.style.opacity = "1"; // Postavlja opacitet na 1 (vidljivo)
+                    sekcija.style.transform = "translateY(0)"; // Pomjera sekciju na svoju poziciju
+                    sekcija.style.transition = "opacity 1s ease-out, transform 1s ease-out"; // Dodaje tranziciju
+                }
+            });
+        }
+
+        sekcije.forEach(sekcija => { // Na početku sve sekcije su nevidljive i pomjerene
+            sekcija.style.opacity = "0";
+            sekcija.style.transform = "translateY(50px)";
+        });
+
+        window.addEventListener("scroll", prikaziSekcije); // Pokreće prikaz sekcija pri skrolovanju
+        prikaziSekcije(); // Pokreće prikaz sekcija odmah po učitavanju stranice
+
+        const backToTop = document.querySelector(".backToTop"); // Selektuje dugme za povratak na početak
+
+        if (backToTop) {
+            window.addEventListener("scroll", function() { // Kada korisnik skroluje
+                if (window.scrollY > 100) { // Ako je stranica skrolovana više od 100px
+                    backToTop.style.display = "block"; // Prikazuje dugme za povratak na vrh
+                } else {
+                    backToTop.style.display = "none"; // Sakriva dugme
+                }
+            });
+
+            backToTop.addEventListener("click", function() { // Kada korisnik klikne na dugme
+                window.scrollTo({ top: 0, behavior: "smooth" }); // Glatko pomjera stranicu na vrh
+            });
+        }
+    });
+</script>
+
+</head>
+<body style="margin: 0; padding: 0; width: 100%; font-family: Arial, sans-serif;">
+    <header style="padding: 10px 0;">
+        <table width="100%">
+            <tr>
+                <td align="right" style="padding-right: 40px;">
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook" style="font-size: 1.5em; margin-left: 10px; color: #ea2041;"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram" style="font-size: 1.5em; margin-left: 10px; color: #ea2041;"></i>
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube" style="font-size: 1.5em; margin-left: 10px; color: #ea2041;"></i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <header>
+        <table width="100%">
+            <tr>
+                <td width="30%" align="left">
+                    <a href="index.html" title="Početna stranica">
+                        <img width="210px" height="100px" src="slike/logo.jpg" alt="Logo">
+                    </a>
+                </td>
+                <td width="65%" align="right" style="padding-right: 20px;">
+                    <a href="index.html">Početna</a>
+                    <a href="onama.html">O nama</a>
+                    <a href="kursevi.html">Kursevi</a>
+                    <a href="utisci.html">Utisci</a>
+                    <a href="kontakt.html">Kontakt</a>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <section style=" padding: 20px;">
+       
+        <table width="100%">
+            <tr>
+                <td width="15%"></td>
+                <td width="70%" align="center">
+                    <h1 class="underline">Kursevi</h1>
+                    <p>
+                        Nudimo širok spektar kurseva koji su prilagođeni svima, od početnika do naprednih programera. Pogledajte našu ponudu i odaberite kurs koji odgovara vašim potrebama!
+                    </p>
+                </td>
+                <td width="15%"></td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <table border="1" width="80%" align="center" cellpadding="10" cellspacing="0" style="margin-top: 20px;" class="tabelica">
+            <tr>
+                <th>Naziv kursa</th>
+                <th>Trajanje</th>
+                <th>Opis</th>
+                <th>Cijena</th>
+            </tr>
+            <tr align="center">
+                <td style="color: #333;">HTML i CSS</td>
+                <td>4 sedmice</td>
+                <td>Osnovni kurs za početnike.</td>
+                <td>150 KM</td>
+            </tr>
+            <tr align="center">
+                <td>JavaScript</td>
+                <td>6 sedmica</td>
+                <td>Napredni kurs za dinamičke web stranice.</td>
+                <td>200 KM</td>
+            </tr>
+            <tr align="center">
+                <td>PHP i MySQL</td>
+                <td>8 sedmica</td>
+                <td>Rad sa serverima i bazama podataka.</td>
+                <td>250 KM</td>
+            </tr>
+            <tr align="center">
+                <td>React.js</td>
+                <td>6 sedmica</td>
+                <td>Frontend framework za moderne aplikacije.</td>
+                <td>300 KM</td>
+            </tr>
+        </table>
+    </section>
+    <section style=" padding: 20px;">
+        <table width="100%" style="color: white; text-align: center;">
+            <tr>
+                <td width="15%"></td>
+                <td width="70%">
+                    <h2 class="underline">Zašto odabrati naše kurseve?</h2>
+                    <ul id="kurseviid">
+                        <li>Praktična nastava sa stručnim instruktorima</li>
+                        <li>Pristup najnovijim tehnologijama</li>
+                        <li>Fleksibilni termini za zaposlene</li>
+                        <li>Certifikat priznat u industriji</li>
+                    </ul>
+                </td>
+                <td width="15%"></td>
+            </tr>
+        </table>
+    </section>
+    <button class="backToTop" style="background-color: #ee2a50;">Početak stranice</button>
+    <footer>
+        <table width="100%">
+            <tr>
+                <td width="20%"></td>
+                <td width="30%" align="left">
+                    <h1>Škola Web Dizajna</h1>
+                    <h3>Pridružite se našim kursevima već danas!</h3>
+                </td>
+                <td width="30%" align="left">
+                    <h2>Kontakt</h2>
+                    <p>Email: skolawebdizajna@gmail.com</p>
+                    <p>Telefon: +387 33 123 456</p>
+                </td>
+                <td width="20%"></td>
+            </tr>
+        </table>
+    </footer>
+    <footer>
+        <p align="center">Stranicu kreirala Ena Karić <i class="fa fa-heart"></i></p>
+    </footer>
+    <script src="script/scripts.js"></script>
+</body>
+</html>
